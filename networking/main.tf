@@ -1,7 +1,7 @@
 resource "aws_vpc" "main" {
     cidr_block = var.vpc_cidr
     tags = merge(var.tags, {
-        Name = "${var.env}-vpc"
+        Name = "${var.environment}-vpc"
     })
 }
 
@@ -12,7 +12,7 @@ resource "aws_subnet" "public" {
     availability_zone = element(var.azs, count.index)
     map_public_ip_on_launch = true
     tags = merge(var.tags, {
-        Name = "${var.env}-public-${count.index + 1}"
+        Name = "${var.environment}-public-${count.index + 1}"
     })
 }
 

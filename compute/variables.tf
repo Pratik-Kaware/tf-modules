@@ -3,5 +3,5 @@ variable "ami" {}
 variable "instance_type" {}
 variable "subnet_ids" { type = list(string) }
 variable "key_pair_name" {}
-variable "env" {}
+variable "environment" {}
 variable "tags" { type = map(string) }
